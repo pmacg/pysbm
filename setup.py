@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 VERSION = '0.1.0'
 DESCRIPTION = 'Generate graphs from the stochastic block model.'
 LONG_DESCRIPTION =\
-    "Tools for generating graphs from the stochastic block model."
+    "Tools for generating graphs from the stochastic block model." \
+    "For documentation, see [the README](https://github.com/pmacg/pysbm)"
 
 # Setting up
 setup(
@@ -13,6 +14,7 @@ setup(
     author_email="<macgregor.pr@gmail.com>",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=["numpy", "scipy"],
 
