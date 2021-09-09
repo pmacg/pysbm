@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 DESCRIPTION = 'Generate graphs from the stochastic block model.'
 LONG_DESCRIPTION =\
     "Tools for generating graphs from the stochastic block model." \

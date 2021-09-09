@@ -1,6 +1,7 @@
 """
 Several methods for generating graphs from the stochastic block model.
 """
+import itertools
 import math
 import random
 import scipy.sparse
@@ -105,13 +106,13 @@ def _generate_sbm_edges(cluster_sizes, prob_mat_q, directed=False):
                                              True,
                                              directed)
 
-            # We sample the edges in a slightly naive way.
-            # This will introduce some error in that some edges will be sampled and returned twice.
-            # TODO: correct for the error of double-sampling.
-            u_idxs = random.choices(range(c1_base_index, c1_base_index + cluster_sizes[cluster_1]), k=num_edges)
-            v_idxs = random.choices(range(c2_base_index, c2_base_index + cluster_sizes[cluster_2]), k=num_edges)
+            # Sample this number of edges. TODO: correct for possible double-sampling of edges
+            num_possible_edges = (cluster_sizes[cluster_1] * cluster_sizes[cluster_2]) - 1
             for i in range(num_edges):
-                yield u_idxs[i], v_idxs[i]
+                edge_idx = random.randint(0, num_possible_edges)
+                u = c1_base_index + int(edge_idx / cluster_sizes[cluster_1])
+                v = c2_base_index + (edge_idx % cluster_sizes[cluster_1])
+                yield u, v
 
             # Update the base index for the second cluster
             c2_base_index += cluster_sizes[cluster_2]

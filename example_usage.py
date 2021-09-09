@@ -7,7 +7,7 @@ import sbm
 def main():
     # Create a sparse adjacency matrix of a graph with 1000 vertices and 5 equal sized clusters.
     # The probability of each edge inside a cluster is 0.3 and the probability of edges between clusters is 0.03.
-    adj_mat = sbm.ssbm_adjmat(1000, 5, 0.3, 0.03, directed=False)
+    adj_mat = sbm.ssbm_adjmat(10000, 5, 0.3, 0.03, directed=False)
     print(adj_mat)
 
     # Create an adjacency matrix for a directed graph with 500 vertices, 4 clusters of equal size, and the following
