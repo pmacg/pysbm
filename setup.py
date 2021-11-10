@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.2.0'
-DESCRIPTION = 'Generate graphs from the stochastic block model.'
+VERSION = '0.2.1'
+DESCRIPTION = 'Deprecated in favour of SGTL.'
 LONG_DESCRIPTION =\
-    "Tools for generating graphs from the stochastic block model." \
-    "For documentation, see [the README](https://github.com/pmacg/pysbm)"
+    "This project has been absorbed by the SGTL - Spectral Graph Theory Library." \
+    "See [the documentation](https://sgtl.readthedocs.io/en/latest/)"
 
 # Setting up
 setup(
